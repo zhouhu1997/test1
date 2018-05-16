@@ -1,0 +1,97 @@
+* { margin: 0; padding: 0; }
+html, body { height: 100%; width: 100%; overflow: hidden; }
+.page { height: 100%; width: 100%; background-color: yellow; }
+.slider { height: 100%; width: 100%; display: flex; justify-content: center; align-items: flex-end; }
+.image img { height: 100%; width: 100%; position: fixed; left: 0; top: 0; z-index: 2; }
+label { width: 15%; height: 130px; background-color: red; margin-bottom: 50px; margin-left: 10px; margin-right: 10px; opacity: 0.8; cursor: pointer; z-index: 10; }
+/*去除单选框*/
+.view { display: none; }
+/*下面浏览的图片*/
+label.img1 { background-image: url("../img/img350x130.jpg"); background-size: 100% 100%; }
+label.img2 { background-image: url("../img/img350x130_2.jpg"); background-size: 100% 100%; }
+label.img3 { background-image: url("../img/img350x130.jpg"); background-size: 100% 100%; }
+label.img4 { background-image: url("../img/img350x130_2.jpg"); background-size: 100% 100%; }
+label.img5 { background-image: url("../img/img350x130.jpg"); background-size: 100% 100%; }
+/*放上去有效果*/
+label:hover { opacity: 1; }
+.view:not(:checked) ~ .image img { animation: oncheck 1s linear; }
+ @keyframes oncheck {
+ 0% {
+ opacity: 1;
+ z-index: 3;
+}
+ 100% {
+ opacity: 1;
+ z-index: 3;
+}
+}
+/*选中操作*/
+.view:nth-child(1):checked ~ .image img:nth-child(1) { animation: img1 .5s ease-out; display: block; opacity: 1; z-index: 4; }
+.view:nth-child(2):checked ~ .image img:nth-child(2) { animation: img2 .5s ease-out; display: block; opacity: 1; z-index: 4; }
+.view:nth-child(3):checked ~ .image img:nth-child(3) { animation: img3 1s ease-in; display: block; opacity: 1; z-index: 4; }
+.view:nth-child(4):checked ~ .image img:nth-child(4) { animation: img4 1s ease-out; display: block; opacity: 1; z-index: 4; }
+.view:nth-child(5):checked ~ .image img:nth-child(5) { animation: img5 .7s ease-in-out; display: block; opacity: 1; z-index: 4; }
+ @keyframes img1 {
+ from {
+ left: -500px;
+}
+ to {
+ left: 0;
+}
+}
+ @keyframes img2 {
+ from {
+ top: 350px;
+}
+ to {
+ top: 0;
+}
+}
+ @keyframes img3 {
+ from {
+ -webkit-transform: scale(0.1, 0.1);
+ -moz-transform: scale(0.1, 0.1);
+ -ms-transform: scale(0.1, 0.1);
+ -o-transform: scale(0.1, 0.1);
+ transform: scale(0.1, 0.1);
+}
+ to {
+ -webkit-transform: scale(1, 1);
+ -moz-transform: scale(1, 1);
+ -ms-transform: scale(1, 1);
+ -o-transform: scale(1, 1);
+ transform: scale(1, 1);
+}
+}
+ @keyframes img4 {
+ from {
+ -webkit-transform: scale(2, 2);
+ -moz-transform: scale(2, 2);
+ -ms-transform: scale(2, 2);
+ -o-transform: scale(2, 2);
+ transform: scale(2, 2);
+}
+ to {
+ -webkit-transform: scale(1, 1);
+ -moz-transform: scale(1, 1);
+ -ms-transform: scale(1, 1);
+ -o-transform: scale(1, 1);
+ transform: scale(1, 1);
+}
+}
+ @keyframes img5 {
+ from {
+ -webkit-transform: scale(0.1, 0.1) rotate(-360deg);
+ -moz-transform: scale(0.1, 0.1) rotate(-360deg);
+ -ms-transform: scale(0.1, 0.1) rotate(-360deg);
+ -o-transform: scale(0.1, 0.1) rotate(-360deg);
+ transform: scale(0.1, 0.1) rotate(-360deg);
+}
+ to {
+ -webkit-transform: scale(1, 1) rotate(0deg);
+ -moz-transform: scale(1, 1) rotate(0deg);
+ -ms-transform: scale(1, 1) rotate(0deg);
+ -o-transform: scale(1, 1) rotate(0deg);
+ transform: scale(1, 1) rotate(0deg);
+}
+}
